@@ -6,20 +6,10 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/ivishalmj/mavenpipeline.git'
             }
         }
-        stage('Test'){
+        stage('docker image'){
             steps{
-                sh 'mvn test'
+                sh 'docker build -t myimage'
             }
-        }
-        stage('Build'){
-            steps{
-                sh 'mvn package'
-            }
-        }
-        stage('deploy'){
-            steps{
-                echo "deployment successful"
-            }
-        }
+        } 
     }
 }
