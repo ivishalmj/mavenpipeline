@@ -8,7 +8,7 @@ pipeline{
         }
         stage('docker image'){
             steps{
-                sh 'docker build -t myimage'
+                sh 'docker build -t thetips4u/springboot:latest .'
             }
         } 
     }
